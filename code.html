@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>India's Best Gaming Site - Ultimate Online Betting & Gaming</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+  }
+
+  header {
+    background-color: #121f3c;
+    padding: 2rem 3rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #a6e3e9;
+  }
+
+  header h1 {
+    font-weight: 800;
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+    color: #39ff14;
+  }
+
+  nav a {
+    color: #a6e3e9;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #39ff14;
+  }
+
+  .welcome-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem 5rem;
+    text-align: center;
+    border-radius: 16px;
+    margin: 3rem auto 2rem;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.4);
+    max-width: 1100px;
+  }
+
+  .welcome-section h2 {
+    font-size: 3rem;
+    color: #39ff14;
+    margin-bottom: 1.3rem;
+    font-weight: 900;
+  }
+
+  .welcome-section p {
+    font-size: 1.4rem;
+    margin: 0.7rem 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .highlight {
+    color: #ffcc00;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  .welcome-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1.2rem auto 2rem;
+    max-width: 700px;
+    font-size: 1.3rem;
+  }
+
+  .welcome-section ul li {
+    margin-bottom: 1rem;
+  }
+
+  .welcome-section a.place-bet-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #39ff14;
+    color: #000;
+    font-weight: 900;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 14px;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    box-shadow: 0 0 25px #39ff14cc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .welcome-section a.place-bet-btn:hover {
+    background: #2bcf00;
+    box-shadow: 0 0 35px #39ff14ff;
+  }
+
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 4rem 4rem 4rem;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+  }
+
+  .events, .bet-slip {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(57,255,20,0.4);
+    padding: 2.5rem 2.5rem;
+    flex: 1 1 500px;
+    color: #d0f0c0;
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #39ff14;
+    padding-bottom: 0.7rem;
+    letter-spacing: 2px;
+  }
+
+  .event {
+    background: rgba(0,0,0,0.5);
+    margin-bottom: 1.5rem;
+    padding: 1.3rem 1.5rem;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .event:hover {
+    background: rgba(57,255,20,0.22);
+  }
+
+  .event-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-name {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .event-date {
+    font-size: 1.05rem;
+    color: #bbb;
+  }
+
+  .odds {
+    font-weight: 900;
+    background: #39ff14;
+    color: #000;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    user-select: none;
+  }
+
+  .bet-slip {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bet-item {
+    background: rgba(0,0,0,0.45);
+    border-radius: 12px;
+    margin-bottom: 1.4rem;
+    padding: 1.1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bet-info {
+    flex-grow: 1;
+  }
+
+  .bet-name {
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+
+  .bet-odds {
+    color: #39ff14;
+    font-weight: 900;
+    font-size: 1.2rem;
+  }
+
+  .bet-remove {
+    color: #ff4040;
+    cursor: pointer;
+    font-size: 2rem;
+    margin-left: 1.5rem;
+    user-select: none;
+    transition: color 0.3s ease;
+  }
+
+  .bet-remove:hover {
+    color: #ff1a1a;
+  }
+
+  .bet-input {
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .bet-input label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #b5ffb5;
+  }
+
+  .bet-input input {
+    flex-grow: 1;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.3rem;
+    background: #112b12;
+    color: #caffca;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  .bet-summary {
+    margin-top: auto;
+    font-weight: 900;
+    font-size: 1.6rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #39ff14;
+    color: #c0ffbd;
+  }
+
+  .place-bet-btn {
+    margin-top: 1.8rem;
+    background: #39ff14;
+    color: #000;
+    font-weight: 900;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 14px;
+    padding: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px #39ff14aa;
+    transition: all 0.3s ease;
+  }
+
+  .place-bet-btn:disabled {
+    background: #59ff4b66;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  .place-bet-btn:hover:not(:disabled) {
+    background: #2bcf00;
+    box-shadow: 0 0 30px #39ff14dd;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1.8rem 0;
+    background: #121f3c;
+    color: #7f8f9a;
+    user-select: none;
+  }
+
+  /* Scrollbars for bet slip if overflow */
+  .bet-slip {
+    max-height: 720px;
+    overflow-y: auto;
+  }
+  .bet-slip::-webkit-scrollbar {
+    width: 12px;
+  }
+  .bet-slip::-webkit-scrollbar-thumb {
+    background-color: #39ff14cc;
+    border-radius: 6px;
+  }
+  .bet-slip::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Large banner image styling */
+  .banner-image, .events-image {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.7);
+    margin: 1.5rem auto 3rem;
+    display: block;
+  }
+
+  .events-image {
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 1024px) {
+    .welcome-section {
+      padding: 2rem 3rem;
+      font-size: 16px;
+    }
+
+    main {
+      padding: 2rem 2rem 4rem 2rem;
+      gap: 2rem;
+    }
+
+    .events, .bet-slip {
+      flex: 1 1 100%;
+      padding: 2rem;
+      font-size: 1.1rem;
+    }
+
+    header {
+      padding: 1.5rem 2rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+    }
+
+    nav a {
+      margin-left: 1.3rem;
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .welcome-section {
+      padding: 1.5rem 1.5rem;
+      font-size: 14px;
+    }
+    .welcome-section h2 {
+      font-size: 2.4rem;
+    }
+    .welcome-section ul {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>India's Best Gaming Site</h1>
+  <nav>
+    <a href="#events">Events</a>
+    <a href="#bet-slip">Bet Slip</a>
+  </nav>
+</header>
+
+<section class="welcome-section" aria-label="Welcome and information about India's Best Gaming Site">
+  <h2>Welcome to <a href="https://winvibes.in/" target="_blank" rel="noopener noreferrer" style="color: #39ff14;">winvibes.in</a></h2>
+  <p>Your ultimate destination for thrilling online betting and gaming experiences. Dive into the world of sports betting, live casinos, slot games, and more—all from the comfort of your home.❤️</p>
+  
+  <img src="https://images.unsplash.com/photo-1602524818764-2d94e7539311?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Casino chips and poker table" class="banner-image" />
+
+  <h3 class="highlight">Why Choose Us?</h3>
+  <ul>
+    <li>✅ 100% Secure & Trusted Platform</li>
+    <li>✅ Fast Withdrawals & 24/7 Support</li>
+    <li>✅ Exciting Bonuses & Promotions</li>
+    <li>✅ Wide Range of Games & Sports</li>
+  </ul>
+  
+  <p>Join thousands of players who trust winvibes.in for action-packed gaming every day! 🎉</p>
+  
+  <h3 class="highlight">Sign Up Now and get a ₹1000 Welcome Bonus!</h3>
+  
+  <p>Got questions or need help? Our friendly support team is available 24/7.</p>
+  <p>📞 WhatsApp: +9196626 23464</p>
+  <p>💬 Live Chat: Available on the website</p>
+  
+  <p><a href="https://winvibes.in/" target="_blank" rel="noopener noreferrer" class="place-bet-btn">REGISTER NOW</a></p>
+  
+  <p class="highlight">NOTE: Bet responsibly. This site is strictly for users 18 years and older. Gambling can be addictive. Please play responsibly.</p>
+</section>
+
+<main>
+  <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Poker cards on table" class="events-image" />
+  <section class="events" id="events" aria-label="List of betting events">
+    <h2 class="section-title">Upcoming Events</h2>
+    <div id="events-list" tabindex="0" aria-live="polite">
+      <!-- Events will be populated by JS -->
+    </div>
+  </section>
+  <aside class="bet-slip" id="bet-slip" aria-label="Your bet slip" tabindex="0">
+    <h2 class="section-title">Your Bet Slip</h2>
+    <div id="bet-items">
+      <p style="color:#7fbf7f;">Select an event to add a bet.</p>
+    </div>
+    <div class="bet-summary" id="bet-summary" aria-live="polite">
+      Total Stake: $0 | Potential Winnings: $0
+    </div>
+    <button class="place-bet-btn" id="place-bet-btn" disabled>Place Bet</button>
+  </aside>
+</main>
+<footer>
+  &copy; 2024 India's Best Gaming Site. All rights reserved. | This website is for demo purposes only.
+</footer>
+<script>
+  // Sample betting events data
+  const eventsData = [
+    {
+      id: 'ev1',
+      name: 'Champions League: Team A vs Team B',
+      date: '2024-07-20 19:00',
+      odds: 1.85
+    },
+    {
+      id: 'ev2',
+      name: 'NBA Finals: Team C vs Team D',
+      date: '2024-07-22 21:30',
+      odds: 2.4
+    },
+    {
+      id: 'ev3',
+      name: 'Super Bowl: Team E vs Team F',
+      date: '2024-07-28 18:00',
+      odds: 1.95
+    },
+    {
+      id: 'ev4',
+      name: 'Premier League: Team G vs Team H',
+      date: '2024-07-25 20:45',
+      odds: 2.15
+    },
+    {
+      id: 'ev5',
+      name: 'World Cup Final: Team I vs Team J',
+      date: '2024-07-30 20:00',
+      odds: 3.1
+    }
+  ];
+
+  const eventsListEl = document.getElementById('events-list');
+  const betItemsEl = document.getElementById('bet-items');
+  const betSummaryEl = document.getElementById('bet-summary');
+  const placeBetBtn = document.getElementById('place-bet-btn');
+
+  // Bet slip state, keyed by event ID, values are bet objects {id, name, odds, stake}
+  let betSlip = {};
+
+  // Utility: Format date string
+  function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    if (isNaN(d)) return dateStr;
+    return d.toLocaleString(undefined, {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      year: 'numeric'
+    });
+  }
+
+  // Render the list of events
+  function renderEvents() {
+    eventsListEl.innerHTML = '';
+    eventsData.forEach(event => {
+      const div = document.createElement('div');
+      div.className = 'event';
+      div.tabIndex = 0;
+      div.setAttribute('role', 'button');
+      div.setAttribute('aria-pressed', 'false');
+      div.dataset.id = event.id;
+
+      const details = document.createElement('div');
+      details.className = 'event-details';
+
+      const nameEl = document.createElement('div');
+      nameEl.className = 'event-name';
+      nameEl.textContent = event.name;
+
+      const dateEl = document.createElement('div');
+      dateEl.className = 'event-date';
+      dateEl.textContent = formatDate(event.date);
+
+      details.appendChild(nameEl);
+      details.appendChild(dateEl);
+
+      const oddsEl = document.createElement('div');
+      oddsEl.className = 'odds';
+      oddsEl.textContent = event.odds.toFixed(2);
+
+      div.appendChild(details);
+      div.appendChild(oddsEl);
+
+      // Event: add to bet slip on click or enter key
+      div.addEventListener('click', () => {
+        addOrToggleBet(event);
+      });
+      div.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          addOrToggleBet(event);
+        }
+      });
+
+      eventsListEl.appendChild(div);
+    });
+  }
+
+  // Add or toggle bet in bet slip
+  function addOrToggleBet(event) {
+    if (betSlip[event.id]) {
+      // Already in bet slip, remove it
+      delete betSlip[event.id];
+    } else {
+      // Add with default stake 0
+      betSlip[event.id] = { ...event, stake: 0 };
+    }
+    renderBetSlip();
+  }
+
+  // Render bet slip
+  function renderBetSlip() {
+    betItemsEl.innerHTML = '';
+
+    const betIds = Object.keys(betSlip);
+    if (betIds.length === 0) {
+      betItemsEl.innerHTML = '<p style="color:#7fbf7f;">Select an event to add a bet.</p>';
+      placeBetBtn.disabled = true;
+      updateSummary();
+      return;
+    }
+
+    betIds.forEach(id => {
+      const bet = betSlip[id];
+      const div = document.createElement('div');
+      div.className = 'bet-item';
+
+      const info = document.createElement('div');
+      info.className = 'bet-info';
+
+      const betName = document.createElement('div');
+      betName.className = 'bet-name';
+      betName.textContent = bet.name;
+
+      const betOdds = document.createElement('div');
+      betOdds.className = 'bet-odds';
+      betOdds.textContent = `Odds: ${bet.odds.toFixed(2)}`;
+
+      info.appendChild(betName);
+      info.appendChild(betOdds);
+
+      const removeBtn = document.createElement('div');
+      removeBtn.className = 'bet-remove';
+      removeBtn.textContent = '×';
+      removeBtn.title = 'Remove bet';
+      removeBtn.tabIndex = 0;
+      removeBtn.setAttribute('role', 'button');
+      removeBtn.setAttribute('aria-label', `Remove bet on ${bet.name}`);
+      removeBtn.addEventListener('click', () => {
+        delete betSlip[bet.id];
+        renderBetSlip();
+      });
+      removeBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          delete betSlip[bet.id];
+          renderBetSlip();
+        }
+      });
+
+      const stakeDiv = document.createElement('div');
+      stakeDiv.className = 'bet-input';
+
+      const stakeLabel = document.createElement('label');
+      stakeLabel.htmlFor = `stake-${bet.id}`;
+      stakeLabel.textContent = 'Stake $';
+
+      const stakeInput = document.createElement('input');
+      stakeInput.type = 'number';
+      stakeInput.min = '0';
+      stakeInput.step = '0.1';
+      stakeInput.id = `stake-${bet.id}`;
+      stakeInput.value = bet.stake;
+      stakeInput.setAttribute('aria-label', `Set stake amount for ${bet.name}`);
+
+      stakeInput.addEventListener('input', (e) => {
+        let val = parseFloat(e.target.value);
+        if (isNaN(val) || val < 0) {
+          val = 0;
+        }
+        betSlip[bet.id].stake = val;
+        updateSummary();
+      });
+
+      stakeDiv.appendChild(stakeLabel);
+      stakeDiv.appendChild(stakeInput);
+
+      div.appendChild(info);
+      div.appendChild(stakeDiv);
+      div.appendChild(removeBtn);
+
+      betItemsEl.appendChild(div);
+    });
+
+    updateSummary();
+  }
+
+  // Update the betting summary (total stake and potential winnings)
+  function updateSummary() {
+    let totalStake = 0;
+    let potentialWinnings = 0;
+    Object.values(betSlip).forEach(bet => {
+      totalStake += bet.stake;
+      potentialWinnings += bet.stake * bet.odds;
+    });
+    betSummaryEl.textContent = 
+      `Total Stake: $${totalStake.toFixed(2)} | Potential Winnings: $${potentialWinnings.toFixed(2)}`;
+
+    placeBetBtn.disabled = totalStake <= 0;
+  }
+
+  // Handle place bet button click
+  placeBetBtn.addEventListener('click', () => {
+    const betsPlaced = Object.values(betSlip).filter(bet => bet.stake > 0);
+    if (betsPlaced.length === 0) {
+      alert('Please enter stake amounts for your bets.');
+      return;
+    }
+
+    let message = 'You have placed bets on:\n\n';
+    betsPlaced.forEach(bet => {
+      message += `• ${bet.name} - Stake: $${bet.stake.toFixed(2)} - Potential Winnings: $${(bet.stake * bet.odds).toFixed(2)}\n`;
+    });
+    message += '\nGood luck! (This is a demo, no real bets are placed.)';
+
+    alert(message);
+
+    // Reset bet slip after placing bets
+    betSlip = {};
+    renderBetSlip();
+  });
+
+  // Initialization
+  renderEvents();
+  renderBetSlip();
+</script>
+</body>
+</html>
+
